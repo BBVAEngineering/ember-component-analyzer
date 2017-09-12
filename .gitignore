@@ -1,0 +1,24 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/tmp
+/docs
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+/.sass-cache
+npm-debug.log*
+yarn-error.log
+testem.log
+*.DS_Store
+*.log
+
+# Babel temp files
+*-compiled.js
+*.js.map
+
+# Webstorm
+.idea

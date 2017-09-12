@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": "eslint-config-bbva",
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "node": true
+  }
+}
