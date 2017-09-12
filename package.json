@@ -15,7 +15,14 @@
   "author": "josex2r",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "7.2.3",
     "eslint": "3.6.0",
     "eslint-config-bbva": "2.0.0"
+  },
+  "dependencies": {
+    "@glimmer/syntax": "^0.27.0",
+    "ember-template-lint": "^0.8.4",
+    "strip-bom": "^3.0.0",
+    "walk-sync": "^0.3.2"
   }
 }
