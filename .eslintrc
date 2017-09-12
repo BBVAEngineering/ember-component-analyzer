@@ -3,9 +3,9 @@
   "parser": "babel-eslint",
   "extends": "eslint-config-bbva",
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true
   },
   "globals": {
-    "node": true
   }
 }
