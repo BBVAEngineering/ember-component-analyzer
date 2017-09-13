@@ -22,6 +22,7 @@
   "dependencies": {
     "@glimmer/syntax": "^0.27.0",
     "ember-template-lint": "^0.8.4",
+    "lodash": "^4.17.4",
     "strip-bom": "^3.0.0",
     "walk-sync": "^0.3.2"
   }
