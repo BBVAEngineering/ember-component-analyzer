@@ -1,9 +1,11 @@
+'use strict';
+
 /* global describe it */
 /* eslint no-unusued-expressions: false */
 const assert = require('assert');
 const expect = require('chai').expect;
-const process = require('../lib/process');
-const visit = require('../lib/visit');
+const process = require('../../lib/process');
+const visit = require('../../lib/visit');
 
 describe('visit.js', () => {
 	describe('#visit() - yields', () => {
@@ -28,7 +30,7 @@ describe('visit.js', () => {
 
 		it('should return contextual components', () => {
 			const input = process('test', `
-				{{yield}}
+				{{yield (hash foo='bar')  (hash wow='omg')}}
 				{{#my-component}}
 					{{yield (hash
 						foo=(component 'bar')
@@ -40,21 +42,33 @@ describe('visit.js', () => {
 			const result = visit(input.ast);
 
 			assert.deepEqual(result, [{
-				name: 'yield'
+				name: 'yield',
+				contextuals: [
+					[{
+						key: 'foo',
+						value: 'bar'
+					}],
+					[{
+						key: 'wow',
+						value: 'omg'
+					}]
+				]
 			}, {
 				name: 'my-component',
 				components: [{
 					name: 'yield',
-					contextuals: [{
-						key: 'foo',
-						value: 'bar'
-					}, {
-						key: 'wow',
-						value: true
-					}, {
-						key: 'yay',
-						value: 'omg'
-					}]
+					contextuals: [
+						[{
+							key: 'foo',
+							value: 'bar'
+						}, {
+							key: 'wow',
+							value: true
+						}, {
+							key: 'yay',
+							value: 'omg'
+						}]
+					]
 				}]
 			}]);
 		});
