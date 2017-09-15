@@ -4,7 +4,7 @@
 /* eslint no-unusued-expressions: false */
 const assert = require('assert');
 const expect = require('chai').expect;
-const Dictionary = require('../../lib/models/dictionary');
+const Dictionary = require('../lib/models/dictionary');
 
 describe('dictionary.js', () => {
 	describe('#constructor()', () => {

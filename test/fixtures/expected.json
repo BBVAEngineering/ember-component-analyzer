@@ -1,0 +1,106 @@
+{
+	"errors": [{
+		"fatal": true,
+		"moduleId": "./test/fixtures/components/header-main.hbs",
+		"message": "Unclosed element `header` (on line 1).",
+		"severity": 2
+	}],
+	"components": {
+		"footer-main": {
+			"family": "components",
+			"moduleId": "./test/fixtures/components/footer-main.hbs",
+			"name": "footer-main",
+			"components": [{
+				"name": "header-main",
+				"components": []
+			}],
+			"contextuals": {
+				"link": "button-link"
+			}
+		},
+		"wrapper-main": {
+			"family": "components",
+			"moduleId": "./test/fixtures/components/wrapper-main.hbs",
+			"name": "wrapper-main",
+			"components": [],
+			"contextuals": {
+				"header": "header-main",
+				"footer": "footer-main"
+			}
+		},
+		"button-link": {
+			"family": "components",
+			"moduleId": "./test/fixtures/pods/components/button-link.hbs",
+			"name": "button-link",
+			"components": [],
+			"contextuals": {}
+		},
+		"form-container": {
+			"family": "components",
+			"moduleId": "./test/fixtures/pods/components/form-container.hbs",
+			"name": "form-container",
+			"components": [],
+			"contextuals": {
+				"radio": "input-radio",
+				"submit": "button-link"
+			}
+		},
+		"input-radio": {
+			"family": "components",
+			"moduleId": "./test/fixtures/pods/components/input-radio.hbs",
+			"name": "input-radio",
+			"components": [],
+			"contextuals": {}
+		}
+	},
+	"default": {
+		"./test/fixtures/pods/index/template.hbs": {
+			"family": "default",
+			"moduleId": "./test/fixtures/pods/index/template.hbs",
+			"name": "./test/fixtures/pods/index/template.hbs",
+			"components": [{
+				"name": "form-container",
+				"as": "form",
+				"components": [{
+					"name": "input-radio"
+				}, {
+					"name": "form-container.not-exists"
+				}, {
+					"name": "form-container.notExists"
+				}, {
+					"name": "button-link"
+				}]
+			}]
+		},
+		"./test/fixtures/templates/application.hbs": {
+			"family": "default",
+			"moduleId": "./test/fixtures/templates/application.hbs",
+			"name": "./test/fixtures/templates/application.hbs",
+			"components": [{
+				"name": "wrapper-main",
+				"as": "wrapper",
+				"components": [{
+					"name": "header-main"
+				}, {
+					"name": "footer-main",
+					"as": "wrapper",
+					"components": [{
+						"name": "button-link"
+					}, {
+						"name": "button-link"
+					}, {
+						"name": "footer-main.notExist"
+					}]
+				}, {
+					"name": "not-exist"
+				}]
+			}]
+		},
+		"./test/fixtures/templates/error.hbs": {
+			"family": "default",
+			"moduleId": "./test/fixtures/templates/error.hbs",
+			"name": "./test/fixtures/templates/error.hbs",
+			"components": []
+		}
+	}
+}

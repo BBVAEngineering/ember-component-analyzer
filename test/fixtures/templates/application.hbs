@@ -1,0 +1,12 @@
+{{#wrapper-main as |wrapper|}}
+	{{wrapper.header}}
+	<section>
+		{{outlet}}
+	</section>
+	{{#wrapper.footer as |wrapper|}}
+		{{wrapper.link}}
+		{{button-link}}
+		{{wrapper.notExist}}
+	{{/wrapper.footer}}
+	{{not-exist}}
+{{/wrapper-main}}
