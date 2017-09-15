@@ -1,3 +1,5 @@
+'use strict';
+
 /* global describe it */
 /* eslint no-unusued-expressions: false */
 const assert = require('assert');
