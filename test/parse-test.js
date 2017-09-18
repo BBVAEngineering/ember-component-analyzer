@@ -105,8 +105,6 @@ describe('parsejs', () => {
 				}
 			};
 
-			console.dir(parse(input), { depth: null  })
-
 			assert.deepEqual(parse(input), {
 				default: [{
 					moduleId: 'path/to/file.hbs',

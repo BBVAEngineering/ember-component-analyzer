@@ -6,6 +6,7 @@ const assert = require('assert');
 const expect = require('chai').expect;
 const process = require('../../lib/process');
 const visit = require('../../lib/visit');
+const DEFAULTS = require('../../lib/defaults');
 
 describe('visit.js', () => {
 	describe('#visit() - discard blackListed elements', () => {
@@ -20,7 +21,7 @@ describe('visit.js', () => {
 					{{/my-component}}
 				{{/each}}
 			`);
-			const result = visit(input.ast);
+			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
 				name: 'my-component',
@@ -42,7 +43,7 @@ describe('visit.js', () => {
 					{{/my-component}}
 				{{/with}}
 			`);
-			const result = visit(input.ast);
+			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
 				name: 'my-component',
@@ -64,7 +65,7 @@ describe('visit.js', () => {
 					{{/my-component}}
 				{{/if}}
 			`);
-			const result = visit(input.ast);
+			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
 				name: 'my-component',
@@ -86,7 +87,7 @@ describe('visit.js', () => {
 					{{/my-component}}
 				{{/unless}}
 			`);
-			const result = visit(input.ast);
+			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
 				name: 'my-component',

@@ -6,6 +6,7 @@ const assert = require('assert');
 const expect = require('chai').expect;
 const process = require('../../lib/process');
 const visit = require('../../lib/visit');
+const DEFAULTS = require('../../lib/defaults');
 
 describe('visit.js', () => {
 	describe('#visit() - yields', () => {
@@ -16,7 +17,7 @@ describe('visit.js', () => {
 					{{yield}}
 				{{/my-component}}
 			`);
-			const result = visit(input.ast);
+			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
 				name: 'yield'
@@ -39,7 +40,7 @@ describe('visit.js', () => {
 					)}}
 				{{/my-component}}
 			`);
-			const result = visit(input.ast);
+			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
 				name: 'yield',
