@@ -2,7 +2,7 @@
 
 **This project is an experimental dark thing O_O**
 
-This library extracts the "possible" components that may exists in the different routes
+This library extracts the "possibles" components that may exists in the different routes
 of an Ember application. It uses Glimmer compiler to make & read the AST trees.
 
 The lib reads all the handlebars files to find all the components (usually names that 
