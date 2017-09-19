@@ -44,10 +44,7 @@ Given:
 
 ```handlebars
 <div>
-	{{yield (hash
-		header=(component 'my-header')
-	)}}
-
+	{{yield (hash	header=(component 'my-header'))}}
   {{my-footer}}
 </div>
 ```
@@ -70,11 +67,11 @@ Then it will generate an output (using the exported `parser`) similar to:
 
 ```json
 {
-  default: [{
+  "default": [{
     "moduleId": "index.hbs",
     "components": ["my-wrapper", "header-main", "link-to", "my-footer"]
   },
-  components: [{
+  "components": [{
     "moduleId": "my-wrapper",
     "components": ["my-footer"]
   }, {
