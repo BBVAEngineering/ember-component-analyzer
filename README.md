@@ -1,4 +1,5 @@
-# ember-component-analyzer
+# ember-component-analyzer [![Build Status](https://travis-ci.org/BBVAEngineering/ember-component-analyzer.svg?branch=master)](https://travis-ci.org/BBVAEngineering/ember-component-analyzer) [![GitHub version](https://badge.fury.io/gh/BBVAEngineering%2Fember-component-analyzer.svg)](https://badge.fury.io/gh/BBVAEngineering%2Fember-component-analyzer) [![Dependency Status](https://david-dm.org/BBVAEngineering/ember-component-analyzer.svg)](https://david-dm.org/BBVAEngineering/ember-component-analyzer)
+
 
 **This project is an experimental dark thing O_O**
 
@@ -10,6 +11,10 @@ contains `-` for components and `.` for contextual components).
 Once the "possible" components are found, it replaces all the contextual components by
 its real name. This part is only possible for the application components (right now its unable to read the components
 inside the `ember-addons`).
+
+## Information
+
+[![NPM](https://nodei.co/npm/ember-component-analyzer.png?downloads=true&downloadRank=true)](https://nodei.co/npm/ember-component-analyzer/)
 
 ## How to use
 
@@ -44,7 +49,7 @@ Given:
 
 ```handlebars
 <div>
-	{{yield (hash	header=(component 'my-header'))}}
+  {{yield (hash header=(component 'my-header'))}}
   {{my-footer}}
 </div>
 ```
