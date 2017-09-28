@@ -46,7 +46,7 @@ The `Analyzer` class accepts an object as config. The possible attributes are:
 
 - **families**: An object containing the different typologies of the templates 
 (components, helpers, routes, ...) and the `RegExp` used to recognize the type. 
-This families are the different attributes from the result object after parsing 
+These families represents the attributes of the result object after parsing 
 the files.
 
 Defaults to:
@@ -60,7 +60,7 @@ Defaults to:
 
 - **getNodeName**: This function receives an **AST node** as first argument and
 it should return the component name (if valid) or `null` if you don't want  
-the element appears in the report (for example a blacklisted element).
+the element to appear in the report (for example a blacklisted element).
 
 ## Example
 
