@@ -40,6 +40,27 @@ const output = parse(result); // Friendly JSON with the application data
 
 3. Save the results, process or do whatever you want
 
+## Options
+
+The `Analyzer` class accepts an object as config. The possible attributes are:
+
+- **families**: An object containing the different typologies of the templates 
+(components, helpers, routes, ...) and the `RegExp` used to recognize the type. 
+These families represents the attributes of the result object after parsing 
+the files.
+
+Defaults to:
+
+```javascript
+{
+  components: /components/, // the file path contains the word "components"
+  default: /^((?!components).)*$/ // the file path not contains the word "components"
+}
+```
+
+- **getNodeName**: This function receives an **AST node** as first argument and
+it should return the component name (if valid) or `null` if you don't want  
+the element to appear in the report (for example a blacklisted element).
 
 ## Example
 
