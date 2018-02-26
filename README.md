@@ -1,7 +1,11 @@
-# ember-component-analyzer [![Build Status](https://travis-ci.org/BBVAEngineering/ember-component-analyzer.svg?branch=master)](https://travis-ci.org/BBVAEngineering/ember-component-analyzer) [![GitHub version](https://badge.fury.io/gh/BBVAEngineering%2Fember-component-analyzer.svg)](https://badge.fury.io/gh/BBVAEngineering%2Fember-component-analyzer) [![Dependency Status](https://david-dm.org/BBVAEngineering/ember-component-analyzer.svg)](https://david-dm.org/BBVAEngineering/ember-component-analyzer)
+# ember-component-analyzer
 
+[![Build Status](https://travis-ci.org/BBVAEngineering/ember-component-analyzer.svg?branch=master)](https://travis-ci.org/BBVAEngineering/ember-component-analyzer)
+[![GitHub version](https://badge.fury.io/gh/BBVAEngineering%2Fember-component-analyzer.svg)](https://badge.fury.io/gh/BBVAEngineering%2Fember-component-analyzer)
+[![npm version](https://badge.fury.io/js/ember-component-analyzer.svg)](https://badge.fury.io/js/ember-component-analyzer)
+[![Dependency Status](https://david-dm.org/BBVAEngineering/ember-component-analyzer.svg)](https://david-dm.org/BBVAEngineering/ember-component-analyzer)
 
-**This project is an experimental dark thing O_O**
+## This project is an experimental dark thing O_O**
 
 This library extracts the "possibles" components that may exists in the different routes
 of an Ember application. It uses Glimmer compiler to make & read the AST trees.
@@ -107,8 +111,26 @@ Then it will generate an output (using the exported `parser`) similar to:
 }
 ```
 
-# Readable report?
+## Readable report?
 
 Working on it :)
 
 ![report](https://cdn.pbrd.co/images/GKXhxwx.png)
+
+## Contributing
+
+We're thankful to the community for contributing any improvements.
+
+Do not forget to follow our [eslint](https://github.com/BBVAEngineering/javascript/tree/master/eslint-config-bbva) rules and make test for the new functionalities/fixes.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/BBVAEngineering/ember-storages/tags).
+
+## Authors
+
+See the list of [contributors](https://github.com/BBVAEngineering/ember-storages/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
