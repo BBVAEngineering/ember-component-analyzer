@@ -4,6 +4,8 @@
   "description": "Analyze ember app to know about the components that are used in each template.",
   "main": "index.js",
   "scripts": {
+    "lint": "node_modules/.bin/eslint '**/*.js'",
+    "pretest": "npm run lint",
     "test": "mocha --recursive"
   },
   "keywords": [
