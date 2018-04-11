@@ -1,9 +1,6 @@
 'use strict';
 
-/* global describe it */
-/* eslint no-unusued-expressions: false */
 const assert = require('assert');
-const expect = require('chai').expect;
 const parse = require('../lib/parse');
 
 describe('parsejs', () => {

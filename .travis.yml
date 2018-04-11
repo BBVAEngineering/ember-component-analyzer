@@ -1,13 +1,23 @@
 ---
 language: node_js
+node_js:
+  - "stable"
 
 sudo: false
+dist: trusty
 
-node_js:
-- "7"
+cache:
+  directories:
+    - $HOME/.npm
+
+before_install:
+  - npm config set spin false
+  - npm install -g npm@^5.7
+  - npm --version
 
 install:
-  - npm install
+  - npm ci
 
 script:
+  - node_modules/.bin/eslint '**/*.js'
   - npm test

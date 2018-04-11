@@ -5,7 +5,10 @@ module.exports = {
 	parser: 'babel-eslint',
 	extends: 'eslint-config-bbva',
 	env: {
-		browser: true,
-		node: true
+		node: true,
+		mocha: true
+	},
+	rules: {
+		'no-sync': 0
 	}
 }
