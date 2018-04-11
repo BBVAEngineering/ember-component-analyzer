@@ -1,7 +1,5 @@
 'use strict';
 
-/* global describe it */
-/* eslint no-unusued-expressions: false */
 const assert = require('assert');
 const expect = require('chai').expect;
 const Analyzer = require('../../lib/analyzer');
