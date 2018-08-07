@@ -40,7 +40,10 @@
 			"family": "components",
 			"moduleId": "./test/fixtures/pods/components/form-container.hbs",
 			"name": "form-container",
-			"components": [],
+			"components": [{
+        "name": "partial/path",
+        "type": "partial"
+      }],
 			"contextuals": {
 				"radio": "input-radio",
 				"submit": "button-link"
@@ -76,7 +79,10 @@
 					"name": "button-link",
           "type": "node"
 				}]
-			}]
+      }, {
+        "name": "partial/path",
+        "type": "partial"
+      }]
 		},
 		"./test/fixtures/templates/application.hbs": {
 			"family": "default",
@@ -106,7 +112,10 @@
 				}, {
 					"name": "not-exist",
           "type": "node"
-				}]
+				}, {
+          "name": "partial/path",
+          "type": "partial"
+        }]
 			}]
 		},
 		"./test/fixtures/templates/error.hbs": {
