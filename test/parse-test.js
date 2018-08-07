@@ -11,11 +11,14 @@ describe('parsejs', () => {
 					'path/to/file.hbs': {
 						moduleId: 'path/to/file.hbs',
 						components: [{
-							name: 'foo'
+							name: 'foo',
+							type: 'node'
 						}, {
-							name: 'bar'
+							name: 'bar',
+							type: 'node'
 						}, {
-							name: 'wow'
+							name: 'wow',
+							type: 'node'
 						}]
 					}
 				}
@@ -25,7 +28,16 @@ describe('parsejs', () => {
 				default: [{
 					moduleId: 'path/to/file.hbs',
 					name: 'path/to/file.hbs',
-					components: ['foo', 'bar', 'wow']
+					components: [{
+						name: 'foo',
+						type: 'node'
+					}, {
+						name: 'bar',
+						type: 'node'
+					}, {
+						name: 'wow',
+						type: 'node'
+					}]
 				}]
 			});
 		});
@@ -37,10 +49,13 @@ describe('parsejs', () => {
 						moduleId: 'path/to/file.hbs',
 						components: [{
 							name: 'foo',
+							type: 'node',
 							components: [{
 								name: 'bar',
+								type: 'node',
 								components: [{
-									name: 'wow'
+									name: 'wow',
+									type: 'node'
 								}]
 							}]
 						}]
@@ -52,7 +67,16 @@ describe('parsejs', () => {
 				default: [{
 					moduleId: 'path/to/file.hbs',
 					name: 'path/to/file.hbs',
-					components: ['wow', 'bar', 'foo']
+					components: [{
+						name: 'wow',
+						type: 'node'
+					}, {
+						name: 'bar',
+						type: 'node'
+					}, {
+						name: 'foo',
+						type: 'node'
+					}]
 				}]
 			});
 		});
@@ -63,11 +87,14 @@ describe('parsejs', () => {
 					'path/to/file.hbs': {
 						moduleId: 'path/to/file.hbs',
 						components: [{
-							name: 'foo'
+							name: 'foo',
+							type: 'node'
 						}, {
-							name: 'foo'
+							name: 'foo',
+							type: 'node'
 						}, {
-							name: 'foo'
+							name: 'foo',
+							type: 'node'
 						}]
 					}
 				}
@@ -77,7 +104,10 @@ describe('parsejs', () => {
 				default: [{
 					moduleId: 'path/to/file.hbs',
 					name: 'path/to/file.hbs',
-					components: ['foo']
+					components: [{
+						name: 'foo',
+						type: 'node'
+					}]
 				}]
 			});
 		});
@@ -88,7 +118,8 @@ describe('parsejs', () => {
 					'path/to/file.hbs': {
 						moduleId: 'path/to/file.hbs',
 						components: [{
-							name: 'foo'
+							name: 'foo',
+							type: 'node'
 						}]
 					}
 				},
@@ -96,7 +127,8 @@ describe('parsejs', () => {
 					foo: {
 						moduleId: 'foo',
 						components: [{
-							name: 'bar'
+							name: 'bar',
+							type: 'node'
 						}]
 					}
 				}
@@ -106,12 +138,21 @@ describe('parsejs', () => {
 				default: [{
 					moduleId: 'path/to/file.hbs',
 					name: 'path/to/file.hbs',
-					components: ['foo', 'bar']
+					components: [{
+						name: 'foo',
+						type: 'node'
+					}, {
+						name: 'bar',
+						type: 'node'
+					}]
 				}],
 				components: [{
 					moduleId: 'foo',
 					name: 'foo',
-					components: ['bar']
+					components: [{
+						name: 'bar',
+						type: 'node'
+					}]
 				}]
 			});
 		});

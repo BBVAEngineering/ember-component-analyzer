@@ -34,7 +34,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}]);
 		});
 
@@ -43,7 +44,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}]);
 		});
 
@@ -52,9 +54,11 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}, {
-				name: 'nested-component'
+				name: 'nested-component',
+				type: 'node'
 			}]);
 		});
 	});
@@ -65,7 +69,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}]);
 		});
 
@@ -74,7 +79,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}]);
 		});
 
@@ -83,7 +89,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}]);
 		});
 
@@ -93,8 +100,10 @@ describe('visit.js', () => {
 
 			assert.deepEqual(result, [{
 				name: 'my-component',
+				type: 'node',
 				components: [{
-					name: 'nested-component'
+					name: 'nested-component',
+					type: 'node'
 				}]
 			}]);
 		});
@@ -106,8 +115,10 @@ describe('visit.js', () => {
 			assert.deepEqual(result, [{
 				name: 'my-component',
 				as: 'foo',
+				type: 'node',
 				components: [{
-					name: 'nested-component'
+					name: 'nested-component',
+					type: 'node'
 				}]
 			}]);
 		});
@@ -118,13 +129,17 @@ describe('visit.js', () => {
 
 			assert.deepEqual(result, [{
 				name: 'my-component',
+				type: 'node',
 				components: [{
-					name: 'nested-component'
+					name: 'nested-component',
+					type: 'node'
 				}, {
 					name: 'block-component',
 					as: 'foo',
+					type: 'node',
 					components: [{
-						name: 'deep-component'
+						name: 'deep-component',
+						type: 'node'
 					}]
 				}]
 			}]);
@@ -137,7 +152,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my.component'
+				name: 'my.component',
+				type: 'node'
 			}]);
 		});
 
@@ -146,7 +162,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my.component'
+				name: 'my.component',
+				type: 'node'
 			}]);
 		});
 
@@ -155,7 +172,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my.component'
+				name: 'my.component',
+				type: 'node'
 			}]);
 		});
 
@@ -165,8 +183,10 @@ describe('visit.js', () => {
 
 			assert.deepEqual(result, [{
 				name: 'my.component',
+				type: 'node',
 				components: [{
-					name: 'nested.component'
+					name: 'nested.component',
+					type: 'node'
 				}]
 			}]);
 		});
@@ -178,8 +198,10 @@ describe('visit.js', () => {
 			assert.deepEqual(result, [{
 				name: 'my.component',
 				as: 'foo',
+				type: 'node',
 				components: [{
-					name: 'nested.component'
+					name: 'nested.component',
+					type: 'node'
 				}]
 			}]);
 		});
@@ -190,13 +212,17 @@ describe('visit.js', () => {
 
 			assert.deepEqual(result, [{
 				name: 'my.component',
+				type: 'node',
 				components: [{
-					name: 'nested.component'
+					name: 'nested.component',
+					type: 'node'
 				}, {
 					name: 'block.component',
 					as: 'foo',
+					type: 'node',
 					components: [{
-						name: 'deep.component'
+						name: 'deep.component',
+						type: 'node'
 					}]
 				}]
 			}]);

@@ -17,11 +17,14 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'yield'
+				name: 'yield',
+				type: 'node'
 			}, {
 				name: 'my-component',
+				type: 'node',
 				components: [{
-					name: 'yield'
+					name: 'yield',
+					type: 'node'
 				}]
 			}]);
 		});
@@ -41,6 +44,7 @@ describe('visit.js', () => {
 
 			assert.deepEqual(result, [{
 				name: 'yield',
+				type: 'node',
 				contextuals: [
 					[{
 						key: 'foo',
@@ -53,8 +57,10 @@ describe('visit.js', () => {
 				]
 			}, {
 				name: 'my-component',
+				type: 'node',
 				components: [{
 					name: 'yield',
+					type: 'node',
 					contextuals: [
 						[{
 							key: 'foo',
