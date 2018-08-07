@@ -43,7 +43,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my.component'
+				name: 'my.component',
+				type: 'node'
 			}]);
 		});
 
@@ -52,7 +53,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my.component'
+				name: 'my.component',
+				type: 'node'
 			}]);
 		});
 
@@ -61,7 +63,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my.component'
+				name: 'my.component',
+				type: 'node'
 			}]);
 		});
 
@@ -79,7 +82,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}]);
 		});
 
@@ -88,7 +92,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}]);
 		});
 
@@ -97,7 +102,8 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				name: 'my-component'
+				name: 'my-component',
+				type: 'node'
 			}]);
 		});
 
