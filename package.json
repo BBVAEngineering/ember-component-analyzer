@@ -34,18 +34,18 @@
   "homepage": "https://github.com/BBVAEngineering/ember-component-analyzer#readme",
   "license": "ISC",
   "devDependencies": {
-    "babel-eslint": "7.2.3",
-    "chai": "^4.1.2",
-    "eslint": "^4.0.0",
-    "eslint-config-bbva": "^2.0.0",
-    "mocha": "^3.5.3"
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.15.1",
+    "eslint-config-bbva": "^2.0.3",
+    "mocha": "^6.0.2"
   },
   "dependencies": {
-    "@glimmer/syntax": "^0.27.0",
+    "@glimmer/syntax": "^0.39.2",
     "babel-register": "^6.26.0",
-    "ember-template-lint": "^0.8.4",
-    "lodash": "^4.17.4",
+    "ember-template-lint": "^1.1.0",
+    "lodash": "^4.17.11",
     "strip-bom": "^3.0.0",
-    "walk-sync": "^0.3.2"
+    "walk-sync": "^1.1.3"
   }
 }
