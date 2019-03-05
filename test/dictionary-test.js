@@ -29,13 +29,13 @@ describe('dictionary.js', () => {
 		it('should return a component given a simple key that not exists', () => {
 			const component = dictionary.lookup('any-component');
 
-			assert.equal(component, 'any-component');
+			assert.strictEqual(component, 'any-component');
 		});
 
 		it('should return the component name given a simple key', () => {
 			const component = dictionary.lookup('my-component');
 
-			assert.equal(component, 'my-component');
+			assert.strictEqual(component, 'my-component');
 		});
 
 		it('should not return the component name given a complex key that not exists', () => {
@@ -47,7 +47,7 @@ describe('dictionary.js', () => {
 		it('should return the component name given a complex key', () => {
 			const component = dictionary.lookup('my-component.foo');
 
-			assert.equal(component, 'foo-component');
+			assert.strictEqual(component, 'foo-component');
 		});
 
 		it('should not return the component name given a nested key that not exists', () => {
@@ -59,7 +59,7 @@ describe('dictionary.js', () => {
 		it('should return the component name given a nested key', () => {
 			const component = dictionary.lookup('my-component.foo.bar');
 
-			assert.equal(component, 'bar-component');
+			assert.strictEqual(component, 'bar-component');
 		});
 	});
 });

@@ -16,6 +16,9 @@ module.exports = {
 	env: {
 		node: true
 	},
+	rules: {
+		'no-process-env': 0
+	},
 	overrides: [{
 		files: [
 			'test/**/*.js'
@@ -25,6 +28,9 @@ module.exports = {
 		],
 		env: {
 			mocha: true
+		},
+		rules: {
+			'no-unused-expressions': 0
 		}
 	}]
 };

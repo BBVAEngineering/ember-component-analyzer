@@ -1,3 +1,4 @@
+/* eslint-disable node/no-deprecated-api */
 'use strict';
 
 const assert = require('assert');
@@ -9,6 +10,7 @@ describe('analyzer.js', () => {
 	describe('#process()', () => {
 		it('should return the correct tree', () => {
 			const analyzer = new Analyzer('./test/fixtures');
+			/* eslint-disable no-sync */
 			const expected = JSON.parse(fs.readFileSync(path.resolve('./test/fixtures/expected.json')));
 			const result = analyzer.process();
 

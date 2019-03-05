@@ -1,3 +1,4 @@
+/* eslint-disable node/no-deprecated-api */
 'use strict';
 
 const assert = require('assert');
@@ -124,7 +125,8 @@ describe('visit.js', () => {
 		});
 
 		it('should return childs of a block statement with complex name', () => {
-			const input = process('test', '{{#my-component}}{{nested-component}}{{#block-component as |foo|}}{{deep-component}}{{/block-component}}{{/my-component}}');
+			const input = process('test',
+				'{{#my-component}}{{nested-component}}{{#block-component as |foo|}}{{deep-component}}{{/block-component}}{{/my-component}}');
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
@@ -207,7 +209,8 @@ describe('visit.js', () => {
 		});
 
 		it('should return childs of a block statement with not notation', () => {
-			const input = process('test', '{{#my.component}}{{nested.component}}{{#block.component as |foo|}}{{deep.component}}{{/block.component}}{{/my.component}}');
+			const input = process('test',
+				'{{#my.component}}{{nested.component}}{{#block.component as |foo|}}{{deep.component}}{{/block.component}}{{/my.component}}');
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
