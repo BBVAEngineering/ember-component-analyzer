@@ -19,6 +19,17 @@
         "link": "button-link"
       }
     },
+    "contextual-main": {
+      "family": "components",
+      "moduleId": "./test/fixtures/components/contextual-main.hbs",
+      "name": "contextual-main",
+      "components": [{
+        "name": "header-main",
+        "type": "node",
+        "components": []
+      }],
+      "contextuals": {}
+    },
     "wrapper-main": {
       "family": "components",
       "moduleId": "./test/fixtures/components/wrapper-main.hbs",
