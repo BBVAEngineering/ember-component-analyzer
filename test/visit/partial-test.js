@@ -9,7 +9,7 @@ const DEFAULTS = require('../../lib/defaults');
 describe('visit.js', () => {
 	describe('#visit() - partials', () => {
 		it('should return partials', () => {
-			const input = process('test', `{{partial ${'partial/path'}}}`);
+			const input = process('test', '{{partial \'partial/path\'}}');
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
