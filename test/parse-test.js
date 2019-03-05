@@ -24,7 +24,7 @@ describe('parsejs', () => {
 				}
 			};
 
-			assert.deepEqual(parse(input), {
+			assert.deepStrictEqual(parse(input), {
 				default: [{
 					moduleId: 'path/to/file.hbs',
 					name: 'path/to/file.hbs',
@@ -63,7 +63,7 @@ describe('parsejs', () => {
 				}
 			};
 
-			assert.deepEqual(parse(input), {
+			assert.deepStrictEqual(parse(input), {
 				default: [{
 					moduleId: 'path/to/file.hbs',
 					name: 'path/to/file.hbs',
@@ -100,7 +100,7 @@ describe('parsejs', () => {
 				}
 			};
 
-			assert.deepEqual(parse(input), {
+			assert.deepStrictEqual(parse(input), {
 				default: [{
 					moduleId: 'path/to/file.hbs',
 					name: 'path/to/file.hbs',
@@ -134,7 +134,7 @@ describe('parsejs', () => {
 				}
 			};
 
-			assert.deepEqual(parse(input), {
+			assert.deepStrictEqual(parse(input), {
 				default: [{
 					moduleId: 'path/to/file.hbs',
 					name: 'path/to/file.hbs',

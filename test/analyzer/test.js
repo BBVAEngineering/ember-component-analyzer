@@ -8,7 +8,9 @@ const DEFAULT_CONFIG = require('../../lib/defaults');
 describe('analyzer.js', () => {
 	describe('#constructor()', () => {
 		it('should throw an error if no path are provided', () => {
-			expect(() => new Analyzer()).to.throw(Error);
+			const analizer = () => new Analyzer();
+
+			expect(analizer).to.throw(Error);
 		});
 
 		it('should throw an error if no \'getNodeName\' are provided', () => {
@@ -16,17 +18,19 @@ describe('analyzer.js', () => {
 		});
 
 		it('should throw an error if no valid families are provided', () => {
-			expect(() => new Analyzer('foo', {
+			const analizer = () => new Analyzer('foo', {
 				families: {
 					components: null
 				}
-			})).to.throw(Error);
+			});
+
+			expect(analizer).to.throw(Error);
 		});
 
 		it('should store default config', () => {
 			const analyzer = new Analyzer('foo');
 
-			assert.deepEqual(analyzer.config, DEFAULT_CONFIG);
+			assert.deepStrictEqual(analyzer.config, DEFAULT_CONFIG);
 		});
 
 		it('should extend default config', () => {
