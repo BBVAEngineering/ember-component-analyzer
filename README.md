@@ -2,15 +2,21 @@
 
 [![Build Status](https://travis-ci.org/BBVAEngineering/ember-component-analyzer.svg?branch=master)](https://travis-ci.org/BBVAEngineering/ember-component-analyzer)
 [![GitHub version](https://badge.fury.io/gh/BBVAEngineering%2Fember-component-analyzer.svg)](https://badge.fury.io/gh/BBVAEngineering%2Fember-component-analyzer)
-[![npm version](https://badge.fury.io/js/ember-component-analyzer.svg)](https://badge.fury.io/js/ember-component-analyzer)
+[![NPM version](https://badge.fury.io/js/ember-component-analyzer.svg)](https://badge.fury.io/js/ember-component-analyzer)
 [![Dependency Status](https://david-dm.org/BBVAEngineering/ember-component-analyzer.svg)](https://david-dm.org/BBVAEngineering/ember-component-analyzer)
+[![codecov](https://codecov.io/gh/BBVAEngineering/ember-component-analyzer/branch/master/graph/badge.svg)](https://codecov.io/gh/BBVAEngineering/ember-component-analyzer)
+[![Greenkeeper badge](https://badges.greenkeeper.io/BBVAEngineering/ember-component-analyzer.svg)](https://greenkeeper.io/)
 
-## This project is an experimental dark thing O_O**
+## Information
+
+[![NPM](https://nodei.co/npm/ember-component-analyzer.png?downloads=true&downloadRank=true)](https://nodei.co/npm/ember-component-analyzer/)
+
+### This project is an experimental dark thing O_O**
 
 This library extracts the "possibles" components that may exists in the different routes
 of an Ember application. It uses Glimmer compiler to make & read the AST trees.
 
-The lib reads all the handlebars files to find all the components (usually names that 
+The lib reads all the handlebars files to find all the components (usually names that
 contains `-` for components and `.` for contextual components).
 Once the "possible" components are found, it replaces all the contextual components by
 its real name. This part is only possible for the application components (right now its unable to read the components
@@ -48,9 +54,9 @@ const output = parse(result); // Friendly JSON with the application data
 
 The `Analyzer` class accepts an object as config. The possible attributes are:
 
-- **families**: An object containing the different typologies of the templates 
-(components, helpers, routes, ...) and the `RegExp` used to recognize the type. 
-These families represents the attributes of the result object after parsing 
+- **families**: An object containing the different typologies of the templates
+(components, helpers, routes, ...) and the `RegExp` used to recognize the type.
+These families represents the attributes of the result object after parsing
 the files.
 
 Defaults to:
@@ -63,7 +69,7 @@ Defaults to:
 ```
 
 - **getNodeName**: This function receives an **AST node** as first argument and
-it should return the component name (if valid) or `null` if you don't want  
+it should return the component name (if valid) or `null` if you don't want
 the element to appear in the report (for example a blacklisted element).
 
 ## Example

@@ -1,6 +1,5 @@
 ---
 language: node_js
-node_js: stable
 sudo: false
 dist: trusty
 
@@ -11,17 +10,21 @@ cache:
   directories:
     - $HOME/.npm
 
+node_js:
+  - "lts/carbon"
+  - "lts/dubnium"
+  - stable
+
 env:
   global:
     - JOBS=1
 
 jobs:
   fail_fast: true
-  allow_failures:
-    - env: EMBER_TRY_SCENARIO=ember-canary
 
   include:
     - stage: "Tests"
+      node_js: stable
       before_install:
         - npm config set spin false
         - npm install -g npm@6
@@ -44,14 +47,11 @@ jobs:
         - codecov --file=coverage/lcov.info
 
     - stage: "Regression Tests"
-      env: EMBER_TRY_SCENARIO=ember-lts-2.18
-    - env: EMBER_TRY_SCENARIO=ember-lts-3.4
-    - env: EMBER_TRY_SCENARIO=ember-release
-    - env: EMBER_TRY_SCENARIO=ember-beta
-    - env: EMBER_TRY_SCENARIO=ember-canary
-    - env: EMBER_TRY_SCENARIO=ember-default-with-jquery
+      node_js: "lts/carbon"
+    - node_js: "lts/dubnium"
 
     - stage: "Release"
+      node_js: stable
       script: skip
       deploy:
         provider: script
@@ -67,7 +67,7 @@ before_install:
   - npm --version
 
 script:
-  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
+  - npm test
 
 stages:
   - "Tests"
