@@ -1,24 +1,26 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
 # compiled output
-/tmp
-/docs
+/dist/
+/tmp/
 
 # dependencies
-/node_modules
-/bower_components
+/bower_components/
+/node_modules/
 
 # misc
+/.env*
 /.sass-cache
-npm-debug.log*
-yarn-error.log
-testem.log
-*.DS_Store
-*.log
+/connect.lock
+/coverage/
+/libpeerconnection.log
+/npm-debug.log*
+/testem.log
+/yarn-error.log
+/tags*
+/.nyc_output
 
-# Babel temp files
-*-compiled.js
-*.js.map
-
-# Webstorm
-.idea
-
-tags
+# ember-try
+/.node_modules.ember-try/
+/bower.json.ember-try
+/package.json.ember-try
