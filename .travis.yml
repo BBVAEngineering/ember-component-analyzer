@@ -39,7 +39,6 @@ jobs:
       script:
         - commitlint-travis
         - npm run lint:js
-        - npm run lint:hbs
         - npm test
       after_script:
         - greenkeeper-lockfile-upload
