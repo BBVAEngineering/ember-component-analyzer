@@ -4,7 +4,7 @@ module.exports = {
 	root: true,
 	parserOptions: {
 		sourceType: 'script',
-		ecmaVersion: 2015
+		ecmaVersion: 2017
 	},
 	plugins: [
 		'node'
