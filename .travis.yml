@@ -10,18 +10,12 @@ cache:
   directories:
     - $HOME/.npm
 
-node_js:
-  - "lts/carbon"
-  - "lts/dubnium"
-  - stable
-
 env:
   global:
     - JOBS=1
 
 jobs:
   fail_fast: true
-
   include:
     - stage: "Tests"
       node_js: stable
