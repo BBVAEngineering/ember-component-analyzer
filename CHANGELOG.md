@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/BBVAEngineering/ember-component-analyzer/compare/v1.1.2...v1.1.3) (2019-04-29)
+
+
+### Bug Fixes
+
+* **package:** update strip-bom to version 4.0.0 ([f54af85](https://github.com/BBVAEngineering/ember-component-analyzer/commit/f54af85))
+
 ## [1.1.2](https://github.com/BBVAEngineering/ember-component-analyzer/compare/v1.1.1...v1.1.2) (2019-04-09)
 
 
