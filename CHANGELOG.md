@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/BBVAEngineering/ember-component-analyzer/compare/v1.1.3...v1.1.4) (2019-05-16)
+
+
+### Bug Fixes
+
+* **package:** update @glimmer/syntax to version 0.41.0 ([0f23faf](https://github.com/BBVAEngineering/ember-component-analyzer/commit/0f23faf))
+
 ## [1.1.3](https://github.com/BBVAEngineering/ember-component-analyzer/compare/v1.1.2...v1.1.3) (2019-04-29)
 
 
