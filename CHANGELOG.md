@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/BBVAEngineering/ember-component-analyzer/compare/v1.1.4...v1.1.5) (2019-06-28)
+
+
+### Bug Fixes
+
+* **package:** update walk-sync to version 2.0.1 ([cf2ae61](https://github.com/BBVAEngineering/ember-component-analyzer/commit/cf2ae61)), closes [#20](https://github.com/BBVAEngineering/ember-component-analyzer/issues/20)
+
 ## [1.1.4](https://github.com/BBVAEngineering/ember-component-analyzer/compare/v1.1.3...v1.1.4) (2019-05-16)
 
 
