@@ -50,7 +50,7 @@
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
     "commitizen": "^3.0.7",
-    "cz-conventional-changelog": "^2.1.0",
+    "cz-conventional-changelog": "^3.0.0",
     "eslint": "^6.0.1",
     "eslint-config-bbva": "^2.0.3",
     "eslint-plugin-node": "^9.1.0",
