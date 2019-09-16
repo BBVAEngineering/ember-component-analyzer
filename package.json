@@ -43,7 +43,7 @@
   "homepage": "https://github.com/BBVAEngineering/ember-component-analyzer#readme",
   "license": "ISC",
   "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
+    "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
