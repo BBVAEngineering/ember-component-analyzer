@@ -69,7 +69,7 @@
     "walk-sync": "^2.0.1"
   },
   "engines": {
-    "node": "8.* || >= 10.*"
+    "node": ">= 12.*"
   },
   "config": {
     "commitizen": {

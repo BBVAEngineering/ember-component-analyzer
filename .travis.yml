@@ -40,8 +40,7 @@ jobs:
         - codecov --file=coverage/lcov.info
 
     - stage: "Regression Tests"
-      node_js: "lts/carbon"
-    - node_js: "lts/dubnium"
+      node_js: "lts/erbium"
 
     - stage: "Release"
       node_js: stable
