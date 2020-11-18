@@ -62,9 +62,8 @@
     "semantic-release": "^15.13.3"
   },
   "dependencies": {
-    "@glimmer/syntax": "^0.41.0",
+    "@glimmer/syntax": "^0.66.0",
     "babel-register": "^6.26.0",
-    "ember-template-lint": "^1.1.0",
     "lodash": "^4.17.11",
     "strip-bom": "^4.0.0",
     "walk-sync": "^2.0.1"
