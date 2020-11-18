@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/BBVAEngineering/ember-component-analyzer/compare/v1.1.5...v1.2.0) (2020-11-18)
+
+
+### Features
+
+* drop support for node <12 ([605c45c](https://github.com/BBVAEngineering/ember-component-analyzer/commit/605c45c9e272aa3f9e57422d42225aa7f4ac7b4e))
+* upgrade glimmer ([7eab4a6](https://github.com/BBVAEngineering/ember-component-analyzer/commit/7eab4a6286ee24f811ed2e8958a6b3f62d26922c))
+
 ## [1.1.5](https://github.com/BBVAEngineering/ember-component-analyzer/compare/v1.1.4...v1.1.5) (2019-06-28)
 
 
