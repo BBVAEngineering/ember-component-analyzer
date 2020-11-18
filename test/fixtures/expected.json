@@ -2,7 +2,7 @@
   "errors": [{
     "fatal": true,
     "moduleId": "./test/fixtures/components/header-main.hbs",
-    "message": "Unclosed element `header` (on line 1).",
+    "message": "Syntax Error: Unclosed element `header`: \n\n|\n|  <header>\n|\n\n(error occurred in 'an unknown module' @ line 1 : column 0)",
     "severity": 2
   }],
   "components": {
