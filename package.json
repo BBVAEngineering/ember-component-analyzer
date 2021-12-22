@@ -1,6 +1,6 @@
 {
   "name": "ember-component-analyzer",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Analyze ember app to know about the components that are used in each template.",
   "main": "index.js",
   "scripts": {
