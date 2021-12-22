@@ -6,7 +6,7 @@ const visit = require('../../lib/visit');
 const DEFAULTS = require('../../lib/defaults');
 
 describe('visit.js', () => {
-	describe('#visit() - object structure', () => {
+	describe('object structure', () => {
 		it('should create root node', () => {
 			const input = process('test', '');
 			const result = visit(input.ast, DEFAULTS);

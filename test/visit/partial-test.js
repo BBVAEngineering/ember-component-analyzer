@@ -7,7 +7,7 @@ const visit = require('../../lib/visit');
 const DEFAULTS = require('../../lib/defaults');
 
 describe('visit.js', () => {
-	describe('#visit() - partials', () => {
+	describe('partials', () => {
 		it('should return partials', () => {
 			const input = process('test', '{{partial \'partial/path\'}}');
 			const result = visit(input.ast, DEFAULTS);

@@ -6,14 +6,14 @@ const process = require('../../lib/process');
 const visit = require('../../lib/visit');
 const DEFAULTS = require('../../lib/defaults');
 
-describe('visit.js', () => {
+describe('[Octane] visit.js', () => {
 	describe('yields', () => {
 		it('should return yield', () => {
 			const input = process('test', `
 				{{yield}}
-				{{#my-component}}
+				<MyComponent>
 					{{yield}}
-				{{/my-component}}
+				</MyComponent>
 			`);
 			const result = visit(input.ast, DEFAULTS);
 
@@ -25,7 +25,7 @@ describe('visit.js', () => {
 			}, {
 				name: 'my-component',
 				type: 'node',
-				isAngleBrackets: false,
+				isAngleBrackets: true,
 				components: [{
 					isAngleBrackets: false,
 					name: 'yield',
@@ -37,13 +37,13 @@ describe('visit.js', () => {
 		it('should return contextual components', () => {
 			const input = process('test', `
 				{{yield (hash foo='bar')  (hash wow='omg')}}
-				{{#my-component}}
+				<MyComponent>
 					{{yield (hash
 						foo=(component 'bar')
 						wow=true
 						yay='omg'
 					)}}
-				{{/my-component}}
+				</MyComponent>
 			`);
 			const result = visit(input.ast, DEFAULTS);
 
@@ -64,7 +64,7 @@ describe('visit.js', () => {
 			}, {
 				name: 'my-component',
 				type: 'node',
-				isAngleBrackets: false,
+				isAngleBrackets: true,
 				components: [{
 					name: 'yield',
 					type: 'node',

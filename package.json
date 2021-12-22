@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=html --reporter=json --reporter=json-summary --reporter=lcov --report-dir coverage --exclude test mocha --recursive test",
+    "test:debug": "mocha --recursive test",
     "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 95 --functions 100 --branches 85 --lines 96",
     "commit": "git-cz",
     "lint:js": "eslint --max-warnings 0 ./*.js lib test",
@@ -64,6 +65,7 @@
   "dependencies": {
     "@glimmer/syntax": "^0.83.1",
     "babel-register": "^6.26.0",
+    "dasherize": "^2.0.0",
     "lodash": "^4.17.11",
     "strip-bom": "^4.0.0",
     "walk-sync": "^2.0.1"
