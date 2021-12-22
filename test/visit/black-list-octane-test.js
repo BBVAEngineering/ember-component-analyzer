@@ -6,28 +6,28 @@ const process = require('../../lib/process');
 const visit = require('../../lib/visit');
 const DEFAULTS = require('../../lib/defaults');
 
-describe('visit.js', () => {
+describe('[Octane] visit.js', () => {
 	describe('discard blackListed elements', () => {
 		it('should return the tree excluding each', () => {
 			const input = process('test', `
 				{{t 'label'}}
 				{{#each collection as |item|}}
-					{{#my-component as |my|}}
+					<MyComponent as |my|>
 						{{#each model as |data|}}
-							{{my.element data=data}}
+							<my.element data=data />
 						{{/each}}
-					{{/my-component}}
+					</MyComponent>
 				{{/each}}
 			`);
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				isAngleBrackets: false,
+				isAngleBrackets: true,
 				name: 'my-component',
 				as: 'my',
 				type: 'node',
 				components: [{
-					isAngleBrackets: false,
+					isAngleBrackets: true,
 					name: 'my.element',
 					type: 'node'
 				}]
@@ -38,22 +38,22 @@ describe('visit.js', () => {
 			const input = process('test', `
 				{{t 'label'}}
 				{{#with collection as |foo|}}
-					{{#my-component as |my|}}
+					<MyComponent as |my|>
 						{{#with foo as |bar|}}
-							{{my.element data=bar}}
+							<my.element data=data />
 						{{/with}}
-					{{/my-component}}
+					</MyComponent>
 				{{/with}}
 			`);
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				isAngleBrackets: false,
+				isAngleBrackets: true,
 				name: 'my-component',
 				as: 'my',
 				type: 'node',
 				components: [{
-					isAngleBrackets: false,
+					isAngleBrackets: true,
 					name: 'my.element',
 					type: 'node'
 				}]
@@ -64,22 +64,22 @@ describe('visit.js', () => {
 			const input = process('test', `
 				{{t 'label'}}
 				{{#if collection}}
-					{{#my-component as |my|}}
+					<MyComponent as |my|>
 						{{#if my}}
-							{{my.element data=data}}
+							<my.element data=data />
 						{{/if}}
-					{{/my-component}}
+					</MyComponent>
 				{{/if}}
 			`);
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				isAngleBrackets: false,
+				isAngleBrackets: true,
 				name: 'my-component',
 				as: 'my',
 				type: 'node',
 				components: [{
-					isAngleBrackets: false,
+					isAngleBrackets: true,
 					name: 'my.element',
 					type: 'node'
 				}]
@@ -90,22 +90,22 @@ describe('visit.js', () => {
 			const input = process('test', `
 				{{t 'label'}}
 				{{#unless collection}}
-					{{#my-component as |my|}}
+					<MyComponent as |my|>
 						{{#unless my}}
-							{{my.element data=data}}
+							<my.element data=data />
 						{{/unless}}
-					{{/my-component}}
+					</MyComponent>
 				{{/unless}}
 			`);
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
-				isAngleBrackets: false,
+				isAngleBrackets: true,
 				name: 'my-component',
 				as: 'my',
 				type: 'node',
 				components: [{
-					isAngleBrackets: false,
+					isAngleBrackets: true,
 					name: 'my.element',
 					type: 'node'
 				}]

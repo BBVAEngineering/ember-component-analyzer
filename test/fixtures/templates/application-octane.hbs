@@ -1,0 +1,17 @@
+<WrapperMain as |wrapper|>
+	<wrapper.header />
+
+	<section>
+		{{outlet}}
+	</section>
+
+	<wrapper.footerOctane as |wrapper|>
+		<wrapper.link />
+		<ButtonLink />
+		<wrapper.notExist />
+	</wrapper.footerOctane>
+
+	<NotExist />
+
+	{{partial 'partial/path'}}
+</WrapperMain>

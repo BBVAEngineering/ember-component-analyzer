@@ -1,20 +1,41 @@
 {
-  "errors": [{
-    "fatal": true,
-    "moduleId": "./test/fixtures/components/header-main.hbs",
-    "message": "Unclosed element `header`: \n\n|\n|  <header>\n|\n\n(error occurred in 'an unknown module' @ line 1 : column 0)",
-    "severity": 2
-  }],
+  "errors": [
+    {
+      "fatal": true,
+      "moduleId": "./test/fixtures/components/header-main.hbs",
+      "message": "Unclosed element `header`: \n\n|\n|  <header>\n|\n\n(error occurred in 'an unknown module' @ line 1 : column 0)",
+      "severity": 2
+    }
+  ],
   "components": {
     "footer-main": {
       "family": "components",
       "moduleId": "./test/fixtures/components/footer-main.hbs",
       "name": "footer-main",
-      "components": [{
-        "name": "header-main",
-        "type": "node",
-        "components": []
-      }],
+      "components": [
+        {
+          "name": "header-main",
+          "type": "node",
+          "isAngleBrackets": false,
+          "components": []
+        }
+      ],
+      "contextuals": {
+        "link": "button-link"
+      }
+    },
+    "footer-main-octane": {
+      "family": "components",
+      "moduleId": "./test/fixtures/components/footer-main-octane.hbs",
+      "name": "footer-main-octane",
+      "components": [
+        {
+          "name": "header-main",
+          "type": "node",
+          "isAngleBrackets": true,
+          "components": []
+        }
+      ],
       "contextuals": {
         "link": "button-link"
       }
@@ -23,11 +44,28 @@
       "family": "components",
       "moduleId": "./test/fixtures/components/contextual-main.hbs",
       "name": "contextual-main",
-      "components": [{
-        "name": "header-main",
-        "type": "node",
-        "components": []
-      }],
+      "components": [
+        {
+          "isAngleBrackets": false,
+          "name": "header-main",
+          "type": "node",
+          "components": []
+        }
+      ],
+      "contextuals": {}
+    },
+    "contextual-main-octane": {
+      "family": "components",
+      "moduleId": "./test/fixtures/components/contextual-main-octane.hbs",
+      "name": "contextual-main-octane",
+      "components": [
+        {
+          "isAngleBrackets": true,
+          "name": "header-main",
+          "type": "node",
+          "components": []
+        }
+      ],
       "contextuals": {}
     },
     "wrapper-main": {
@@ -37,7 +75,8 @@
       "components": [],
       "contextuals": {
         "header": "header-main",
-        "footer": "footer-main"
+        "footer": "footer-main",
+        "footerOctane": "footer-main-octane"
       }
     },
     "button-link": {
@@ -51,10 +90,12 @@
       "family": "components",
       "moduleId": "./test/fixtures/pods/components/form-container.hbs",
       "name": "form-container",
-      "components": [{
-        "name": "partial/path",
-        "type": "partial"
-      }],
+      "components": [
+        {
+          "name": "partial/path",
+          "type": "partial"
+        }
+      ],
       "contextuals": {
         "radio": "input-radio",
         "submit": "button-link"
@@ -73,61 +114,183 @@
       "family": "default",
       "moduleId": "./test/fixtures/pods/index/template.hbs",
       "name": "./test/fixtures/pods/index/template.hbs",
-      "components": [{
-        "name": "form-container",
-        "as": "form",
-        "type": "node",
-        "components": [{
-          "name": "input-radio",
-          "type": "node"
-        }, {
-        "name": "form-container.not-exists",
-        "type": "node"
-        }, {
-        "name": "form-container.notExists",
-        "type": "node"
-        }, {
-        "name": "button-link",
-        "type": "node"
-        }]
-      }, {
-      "name": "partial/path",
-      "type": "partial"
-      }]
+      "components": [
+        {
+          "isAngleBrackets": false,
+          "name": "form-container",
+          "as": "form",
+          "type": "node",
+          "components": [
+            {
+              "isAngleBrackets": false,
+              "name": "input-radio",
+              "type": "node"
+            },
+            {
+              "isAngleBrackets": false,
+              "name": "form-container.not-exists",
+              "type": "node"
+            },
+            {
+              "isAngleBrackets": false,
+              "name": "form-container.notExists",
+              "type": "node"
+            },
+            {
+              "isAngleBrackets": false,
+              "name": "button-link",
+              "type": "node"
+            }
+          ]
+        },
+        {
+          "name": "partial/path",
+          "type": "partial"
+        }
+      ]
+    },
+    "./test/fixtures/pods/index-octane/template.hbs": {
+      "family": "default",
+      "moduleId": "./test/fixtures/pods/index-octane/template.hbs",
+      "name": "./test/fixtures/pods/index-octane/template.hbs",
+      "components": [
+        {
+          "isAngleBrackets": true,
+          "name": "form-container",
+          "as": "form",
+          "type": "node",
+          "components": [
+            {
+              "isAngleBrackets": true,
+              "name": "input-radio",
+              "type": "node"
+            },
+            {
+              "isAngleBrackets": true,
+              "name": "form-container.not-exists",
+              "type": "node"
+            },
+            {
+              "isAngleBrackets": true,
+              "name": "form-container.notExists",
+              "type": "node"
+            },
+            {
+              "isAngleBrackets": true,
+              "name": "button-link",
+              "type": "node"
+            }
+          ]
+        },
+        {
+          "name": "partial/path",
+          "type": "partial"
+        }
+      ]
+    },
+    "./test/fixtures/templates/application-octane.hbs": {
+      "family": "default",
+      "moduleId": "./test/fixtures/templates/application-octane.hbs",
+      "name": "./test/fixtures/templates/application-octane.hbs",
+      "components": [
+        {
+          "name": "wrapper-main",
+          "as": "wrapper",
+          "type": "node",
+          "isAngleBrackets": true,
+          "components": [
+            {
+              "isAngleBrackets": true,
+              "name": "header-main",
+              "type": "node"
+            },
+            {
+              "isAngleBrackets": true,
+              "name": "footer-main-octane",
+              "as": "wrapper",
+              "type": "node",
+              "components": [
+                {
+                  "isAngleBrackets": true,
+                  "name": "button-link",
+                  "type": "node"
+                },
+                {
+                  "isAngleBrackets": true,
+                  "name": "button-link",
+                  "type": "node"
+                },
+                {
+                  "isAngleBrackets": true,
+                  "name": "footer-main-octane.notExist",
+                  "type": "node"
+                }
+              ]
+            },
+            {
+              "isAngleBrackets": true,
+              "name": "not-exist",
+              "type": "node"
+            },
+            {
+              "name": "partial/path",
+              "type": "partial"
+            }
+          ]
+        }
+      ]
     },
     "./test/fixtures/templates/application.hbs": {
       "family": "default",
       "moduleId": "./test/fixtures/templates/application.hbs",
       "name": "./test/fixtures/templates/application.hbs",
-      "components": [{
-        "name": "wrapper-main",
-        "as": "wrapper",
-        "type": "node",
-        "components": [{
-          "name": "header-main",
-          "type": "node"
-        }, {
-        "name": "footer-main",
-        "as": "wrapper",
-        "type": "node",
-        "components": [{
-          "name": "button-link",
-          "type": "node"
-        }, {
-        "name": "button-link",
-        "type": "node"
-        }, {
-        "name": "footer-main.notExist",
-        "type": "node"
-        }]
-        }, {
-        "name": "not-exist",
-        "type": "node"
-        }, {
-        "name": "partial/path",
-        "type": "partial"
-        }]
-      }]
+      "components": [
+        {
+          "name": "wrapper-main",
+          "as": "wrapper",
+          "type": "node",
+          "isAngleBrackets": false,
+          "components": [
+            {
+              "isAngleBrackets": false,
+              "name": "header-main",
+              "type": "node"
+            },
+            {
+              "isAngleBrackets": false,
+              "name": "footer-main",
+              "as": "wrapper",
+              "type": "node",
+              "components": [
+                {
+                  "isAngleBrackets": false,
+                  "name": "button-link",
+                  "type": "node"
+                },
+                {
+                  "isAngleBrackets": false,
+                  "name": "button-link",
+                  "type": "node"
+                },
+                {
+                  "isAngleBrackets": false,
+                  "name": "footer-main.notExist",
+                  "type": "node"
+                }
+              ]
+            },
+            {
+              "isAngleBrackets": false,
+              "name": "not-exist",
+              "type": "node"
+            },
+            {
+              "name": "partial/path",
+              "type": "partial"
+            }
+          ]
+        }
+      ]
     },
     "./test/fixtures/templates/error.hbs": {
       "family": "default",

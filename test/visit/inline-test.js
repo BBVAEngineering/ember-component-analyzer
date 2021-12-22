@@ -8,7 +8,7 @@ const visit = require('../../lib/visit');
 const DEFAULTS = require('../../lib/defaults');
 
 describe('visit.js', () => {
-	describe('#visit() - inline statements', () => {
+	describe('inline statements', () => {
 		it('should not return inline statement with simple name', () => {
 			const input = process('test', '{{foo}}');
 			const result = visit(input.ast, DEFAULTS);
@@ -38,12 +38,13 @@ describe('visit.js', () => {
 		});
 	});
 
-	describe('#visit() - inline statements with dot notation', () => {
+	describe('inline statements with dot notation', () => {
 		it('should return inline statement with complex name', () => {
 			const input = process('test', '{{my.component}}');
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
+				isAngleBrackets: false,
 				name: 'my.component',
 				type: 'node'
 			}]);
@@ -54,6 +55,7 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
+				isAngleBrackets: false,
 				name: 'my.component',
 				type: 'node'
 			}]);
@@ -64,6 +66,7 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
+				isAngleBrackets: false,
 				name: 'my.component',
 				type: 'node'
 			}]);
@@ -77,12 +80,13 @@ describe('visit.js', () => {
 		});
 	});
 
-	describe('#visit() - inline statements with dash notation', () => {
+	describe('inline statements with dash notation', () => {
 		it('should return inline statement with complex name', () => {
 			const input = process('test', '{{my-component}}');
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
+				isAngleBrackets: false,
 				name: 'my-component',
 				type: 'node'
 			}]);
@@ -93,6 +97,7 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
+				isAngleBrackets: false,
 				name: 'my-component',
 				type: 'node'
 			}]);
@@ -103,6 +108,7 @@ describe('visit.js', () => {
 			const result = visit(input.ast, DEFAULTS);
 
 			assert.deepEqual(result, [{
+				isAngleBrackets: false,
 				name: 'my-component',
 				type: 'node'
 			}]);
@@ -110,6 +116,48 @@ describe('visit.js', () => {
 
 		it('should not return inline statement with complex name and context', () => {
 			const input = process('test', '{{my-component as |bar|}}');
+			const result = visit(input.ast, DEFAULTS);
+
+			expect(result).to.be.empty;
+		});
+	});
+
+	describe('inline statements with dash notation and namespace', () => {
+		it('should return inline statement with complex name', () => {
+			const input = process('test', '{{my/component}}');
+			const result = visit(input.ast, DEFAULTS);
+
+			assert.deepEqual(result, [{
+				isAngleBrackets: false,
+				name: 'my/component',
+				type: 'node'
+			}]);
+		});
+
+		it('should return inline statement with complex name and hash', () => {
+			const input = process('test', '{{my/component bar "wow"}}');
+			const result = visit(input.ast, DEFAULTS);
+
+			assert.deepEqual(result, [{
+				isAngleBrackets: false,
+				name: 'my/component',
+				type: 'node'
+			}]);
+		});
+
+		it('should return inline statement with complex name and hash', () => {
+			const input = process('test', '{{my/component bar=wow}}');
+			const result = visit(input.ast, DEFAULTS);
+
+			assert.deepEqual(result, [{
+				isAngleBrackets: false,
+				name: 'my/component',
+				type: 'node'
+			}]);
+		});
+
+		it('should not return inline statement with complex name and context', () => {
+			const input = process('test', '{{my/component as |bar|}}');
 			const result = visit(input.ast, DEFAULTS);
 
 			expect(result).to.be.empty;

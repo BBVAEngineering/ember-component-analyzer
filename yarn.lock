@@ -1791,6 +1791,11 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+dasherize@^2.0.0:
+  version "2.0.0"
+  resolved "https://descinet.bbva.es/artifactory/api/npm/npm/dasherize/-/dasherize-2.0.0.tgz#6d809c9cd0cf7bb8952d80fc84fa13d47ddb1308"
+  integrity sha1-bYCcnNDPe7iVLYD8hPoT1H3bEwg=
+
 dateformat@^3.0.0:
   version "3.0.3"
   resolved "https://descinet.bbva.es/artifactory/api/npm/npm/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
