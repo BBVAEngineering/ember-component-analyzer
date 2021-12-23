@@ -7,6 +7,21 @@ const visit = require('../../lib/visit');
 const DEFAULTS = require('../../lib/defaults');
 
 describe('[Octane] visit.js', () => {
+	it('should return childs of a block statement with inverse', () => {
+		const input = process('test', '{{#if}}<MyComponent />{{else}}<NestedComponent />{{/if}}');
+		const result = visit(input.ast, DEFAULTS);
+
+		assert.deepEqual(result, [{
+			isAngleBrackets: true,
+			name: 'my-component',
+			type: 'node'
+		}, {
+			isAngleBrackets: true,
+			name: 'nested-component',
+			type: 'node'
+		}]);
+	});
+
 	describe('block statements with simple name', () => {
 		it('should return block statement with simple name', () => {
 			const input = process('test', '<Foo></Foo>');
